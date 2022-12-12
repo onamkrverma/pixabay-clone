@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import {RxCaretDown} from 'react-icons/rx'
+import {GoSearch} from 'react-icons/go'
+
 
 const ImageSearch = ({searchText}) => {
   const [text, setText] = useState('')
@@ -9,16 +12,19 @@ const ImageSearch = ({searchText}) => {
   }
 
   return (
-    <div className=' max-w-sm rounded overflow-hidden my-10 mx-auto '>
-      <div className=" flex items-center border border-inherit rounded-xl p-2 ">
-        <span className='px-2'><i className="fa-solid fa-magnifying-glass"></i></span>
-        <form onSubmit={handleOnSubmit} className='w-full max-w-sm flex'>
-          <input onChange={(e)=>setText(e.target.value)} className=' bg-none border-none w-full outline-none ' type="text" placeholder='Search for all images on Pixabay' />
-          <button className=' bg-green-600 rounded-lg p-2 text-white' type='submit'>Search</button>
+      <div className=" flex items-center border border-inherit rounded bg-[#f7f7f7]">
+        <span className='p-2 text-[#808080]'><GoSearch/></span>
+        <form onSubmit={handleOnSubmit} className='w-full flex'>
+          <input onChange={(e)=>setText(e.target.value)} className=' bg-inherit border-none w-full outline-none ' type="text" placeholder='Search for all images on Pixabay' />
+          <button className='submit-btn' type='submit'></button>
         </form>
+        <div className="select-box flex items-center bg-white text-[#808080] leading-7 m-1 ml-4 px-3">
+          <span>Images</span>
+          <span className='w-6 h-6 caret'><RxCaretDown style={{width:"100%",height:"100%"}}/></span>
+        </div>
         
       </div>
-    </div>
+  
   )
 }
 
