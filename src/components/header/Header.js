@@ -5,7 +5,7 @@ import {AiFillBell} from 'react-icons/ai'
 import {FiUpload} from 'react-icons/fi'
 
 
-const Header = ({setTerm}) => {
+const Header = ({setTerm }) => {
   return (
     <div className='w-full flex items-center justify-between  h-[64px] bg-white px-[32px] shadow-lg'>
       <div className="header-left flex items-center">
@@ -13,7 +13,7 @@ const Header = ({setTerm}) => {
           <img className='w-full h-full object-cover' src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Pixabay-logo-new.svg/48px-Pixabay-logo-new.svg.png" alt="logo" />
         </div>
         <div className="search-box-wrapper w-[500px]">
-        <ImageSearch searchText={(text)=>setTerm(text)}/>
+        <ImageSearch searchText={(text)=>setTerm(text)} detailPage={'detailPage'}/>
         </div>
       </div>
       <div className="header-right flex items-center justify-around ">

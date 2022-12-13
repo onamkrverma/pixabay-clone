@@ -4,7 +4,7 @@ import {FaRegComment} from 'react-icons/fa'
 import {BsBookmark} from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
 
-const Card = ({ image }) => {
+const Card = ({ image ,detailPage}) => {
     const tags = image.tags.split(',');
     const navigate =  useNavigate()
 
@@ -18,18 +18,18 @@ const Card = ({ image }) => {
 
 
     return (
-        <div className=" card group max-w-sm rounded overflow-hidden shadow-lg m-1 relative cursor-pointer" onClick={()=>handleClick(image.id)}>
-            <img className=" w-full h-full object-cover" src={image.webformatURL} alt="pixabay-images" loading='lazy' />
+        <div className= {`card group ${detailPage?'max-w-[70%] ':'max-w-sm'} ${!detailPage && 'h-[300px] w-full max-h-fit'}  rounded overflow-hidden shadow-lg m-1 relative cursor-pointer `}onClick={()=>handleClick(image.id)}>
+            <img className=" w-full h-full " src={detailPage? image.largeImageURL:image.webformatURL} alt="pixabay-images" loading='lazy' />
            
-            <div className="card-bottom-info w-full justify-between absolute px-1 py-2 -bottom-12 transition-all group-hover:flex group-hover:bottom-0  " style={{background:"linear-gradient(0deg,rgba(0,0,0,.6) 0,transparent)"}}>
-                <div className="tags w-1/2 text-ellipsis whitespace-nowrap overflow-hidden ">
+            <div className={`card-bottom-info w-full justify-between absolute px-1 py-2  transition-all group-hover:flex ${detailPage?'-top-12':'-bottom-12 '} ${detailPage? 'group-hover:top-0':'group-hover:bottom-0'} `}   style={{background:`linear-gradient(${detailPage?'180deg':'0deg'},rgba(0,0,0,.6) 0,transparent)`}}>
+                <div className={`tags ${detailPage?'w-full': 'w-1/2'} ${!detailPage &&'text-ellipsis whitespace-nowrap overflow-hidden'} `} >
                 {tags.map((tag,index)=>(
-                    <span key={index} className="px-1 text-sm font-semibold text-white m-1">
+                    <span key={index} className={`px-1 ${detailPage?'text-lg':'text-sm'} font-semibold text-white m-1`}>
                     {tag}
                     </span>
                 ))}
                 </div>
-                <div className="like comments-wrapper flex text-white">
+                <div className={`like comments-wrapper text-sm text-white ${detailPage? 'hidden':'flex'}`} >
                     <div className="like flex items-center ml-2">
                     <span className='w-4 h-4 upload-icon mx-1'><BsSuitHeart style={{width:"100%",height:"100%"}}/></span>
                     {image.likes}
