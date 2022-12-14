@@ -18,13 +18,13 @@ const Card = ({ image ,detailPage}) => {
 
 
     return (
-        <div className= {`card group ${detailPage?'max-w-[70%] ':'max-w-sm'} ${!detailPage && 'h-[300px] w-full max-h-fit'}  rounded overflow-hidden shadow-lg m-1 relative cursor-pointer `}onClick={()=>handleClick(image.id)}>
+        <div className= {`card group ${detailPage?'max-w-[100%] sm:max-w-[70%] ':'max-w-sm'} ${!detailPage && 'sm:h-[300px]  w-full max-h-fit'}  rounded overflow-hidden shadow-lg m-1 relative cursor-pointer  min-[426px]:max-[768px]:max-w-[230px]  `}onClick={()=>handleClick(image.id)}>
             <img className=" w-full h-full " src={detailPage? image.largeImageURL:image.webformatURL} alt="pixabay-images" loading='lazy' />
            
-            <div className={`card-bottom-info w-full justify-between absolute px-1 py-2  transition-all group-hover:flex ${detailPage?'-top-12':'-bottom-12 '} ${detailPage? 'group-hover:top-0':'group-hover:bottom-0'} `}   style={{background:`linear-gradient(${detailPage?'180deg':'0deg'},rgba(0,0,0,.6) 0,transparent)`}}>
+            <div className={`card-bottom-info w-full justify-between absolute px-1 py-2  transition-all group-hover:flex ${detailPage?'-top-14 group-hover:top-0':'-bottom-12 group-hover:bottom-0'} `}   style={{background:`linear-gradient(${detailPage?'180deg':'0deg'},rgba(0,0,0,.6) 0,transparent)`}}>
                 <div className={`tags ${detailPage?'w-full': 'w-1/2'} ${!detailPage &&'text-ellipsis whitespace-nowrap overflow-hidden'} `} >
                 {tags.map((tag,index)=>(
-                    <span key={index} className={`px-1 ${detailPage?'text-lg':'text-sm'} font-semibold text-white m-1`}>
+                    <span key={index} className={`px-1 ${detailPage?'text-sm sm:text-lg ':'text-sm'} font-semibold text-white m-1`}>
                     {tag}
                     </span>
                 ))}

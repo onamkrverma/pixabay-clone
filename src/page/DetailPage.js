@@ -45,11 +45,11 @@ const DetailPage = () => {
 
           {images.map((image) => {
             return (
-              <div className='flex flex-wrap justify-between' key={image.id}>
+              <div className='flex flex-wrap  sm:justify-between' key={image.id}>
                 <Card image={image} detailPage={'detailPage'} />
 
 
-                <div className="other-info">
+                <div className="other-info mt-4 sm:mt-0 ">
                   <div className="uploader-profile-wrapper  ">
                     <div className="name-logo flex items-center">
                       <img className='w-[48px] rounded-3xl mr-3 ' src={image.userImageURL} alt="uploder-logo" />

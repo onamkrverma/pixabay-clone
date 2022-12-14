@@ -15,7 +15,7 @@ const Home = () => {
 
     const apiCall = async () => {
         try {
-            const response = await fetch(`https://pixabay.com/api/?key=${apiKey}&q=${term}&image_type=photo&safesearch=true&per_page=40`);
+            const response = await fetch(`https://pixabay.com/api/?key=${apiKey}&q=${term}&image_type=photo&safesearch=true&per_page=42`);
             const data = await response.json();
             // console.log(data.hits);
             setImages(data.hits);
