@@ -1,4 +1,4 @@
-# Pixabay Clone (UI)
+# Pixabay Clone 
 <img align="right" width="500" alt="screenshots" src="https://user-images.githubusercontent.com/106578262/207322229-139b84e8-b4c5-4f48-b54d-86b2c0ce2803.png">
 
 <img align="right" width="500"  alt="screenshots" src="https://user-images.githubusercontent.com/106578262/207322992-07285131-0aee-4929-a8c6-07dd30635095.png">
